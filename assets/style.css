@@ -1,0 +1,136 @@
+/* Pink vibe theme */
+:root {
+    --bg: #fff0f6;
+    --card: #ffffff;
+    --soft: #ffe0ee;
+    --line: #f9b8d4;
+    --pink: #ec4899;
+    --pink-dark: #be185d;
+    --text: #4a1d36;
+    --muted: #9d5a7b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(160deg, #fff0f6 0%, #ffd9ea 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+header, main { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+header h1 { margin: 0; font-size: 30px; color: var(--pink-dark); }
+header p { margin: 0; color: var(--muted); }
+
+.box {
+    background: var(--card);
+    border-radius: 24px;
+    padding: 26px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
+}
+h2 { margin-top: 0; color: var(--pink-dark); }
+
+label { display: block; margin-bottom: 14px; font-weight: 600; font-size: 14px; }
+.label { font-weight: 600; font-size: 14px; margin: 0 0 8px; }
+
+input[type=text], select, input[type=file] {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px 14px;
+    border: 2px solid var(--soft);
+    border-radius: 14px;
+    background: #fff8fb;
+    color: var(--text);
+    font-size: 15px;
+}
+input:focus, select:focus, button:focus { outline: 3px solid var(--line); border-color: var(--pink); }
+
+/* ticket tier cards */
+.tiers { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.tier { flex: 1; min-width: 180px; margin: 0; cursor: pointer; }
+.tier input { position: absolute; opacity: 0; }
+.tier span {
+    display: block;
+    height: 100%;
+    padding: 14px;
+    background: var(--soft);
+    border: 2px solid transparent;
+    border-radius: 16px;
+    font-weight: normal;
+}
+.tier input:checked + span { background: #fff; border-color: var(--pink); box-shadow: 0 6px 16px rgba(236, 72, 153, 0.25); }
+.tier input:focus + span { outline: 3px solid var(--line); }
+
+.chips { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.chips label, .agree { font-weight: normal; margin-bottom: 0; }
+.agree { margin-bottom: 18px; }
+input[type=checkbox], input[type=radio] { accent-color: var(--pink); }
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #f472b6, #ec4899);
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover { background: linear-gradient(90deg, #ec4899, #be185d); }
+
+.errors {
+    background: #ffe4ec;
+    border: 2px solid var(--pink);
+    border-radius: 14px;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+}
+.errors ul { margin: 6px 0 0; padding-left: 20px; }
+
+/* receipt ticket */
+.receipt {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    background: var(--card);
+    border: 3px dashed var(--pink);
+    border-radius: 24px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.2);
+}
+.receipt img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 4px solid var(--pink); }
+.receipt h2 { margin: 2px 0; }
+.receipt p { margin: 2px 0; }
+.code { font-weight: bold; color: var(--pink); }
+.receipt table { margin-left: auto; min-width: 230px; border-collapse: collapse; }
+.receipt td { padding: 3px 0; }
+.receipt td:last-child { text-align: right; }
+.grand td { border-top: 2px solid var(--pink); font-weight: bold; padding-top: 8px; color: var(--pink-dark); }
+
+/* attendee list */
+.sort a { color: var(--muted); margin-left: 12px; }
+.sort a:hover { color: var(--pink-dark); font-weight: bold; }
+.person {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    background: #fff5f9;
+    border: 1px solid var(--soft);
+    border-radius: 16px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+.person img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; background: var(--soft); }
+.person > div:nth-child(2) { flex: 1; }
+.money { text-align: right; }
+small { color: var(--muted); }
+.tag { background: var(--soft); color: var(--pink-dark); border-radius: 20px; padding: 2px 10px; font-size: 12px; margin-right: 4px; }
