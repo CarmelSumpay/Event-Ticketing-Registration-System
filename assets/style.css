@@ -124,12 +124,18 @@ button:hover { background: linear-gradient(90deg, #ec4899, #be185d); }
     flex-wrap: wrap;
     gap: 12px;
     margin-bottom: 16px;
+    border-bottom: 2px solid #f2d6e7;
+    padding-bottom: 10px;
 }
 .attendees-title {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 0;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #ec4899;
 }
 .attendee-count {
     display: inline-flex;
@@ -139,31 +145,43 @@ button:hover { background: linear-gradient(90deg, #ec4899, #be185d); }
     justify-content: center;
     padding: 0 8px;
     border-radius: 999px;
-    background: var(--soft);
-    color: var(--pink-dark);
-    font-size: 14px;
+    background: #f9a8d4;
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: 700;
     line-height: 1;
 }
-.sort-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+.sort-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: auto;
+}
 .sort-pill {
     display: inline-flex;
-    min-height: 38px;
     align-items: center;
     justify-content: center;
-    padding: 8px 14px;
-    border: 1px solid #e5e7eb;
+    min-height: 38px;
+    padding: 8px 18px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 999px;
     background: #fff;
-    color: #4b5563;
-    font-size: 14px;
+    color: #374151;
+    font-size: 15px;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
-.sort-pill:hover:not(.is-active) { background: #fdf2f8; border-color: #fbcfe8; color: #4b5563; }
-.sort-pill.is-active { border-color: #db2777; background: #db2777; color: #fff; }
+.sort-pill.is-active {
+    background: #fff;
+    color: #1f2937;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+.sort-pill:not(.is-active) {
+    background: transparent;
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #374151;
+}
 .sort-pill:focus-visible { outline: 3px solid var(--line); outline-offset: 2px; }
-.sort-pill:hover { transform: translateY(-1px); }
 .person {
     display: flex;
     gap: 14px;
