@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gatepass - Event Ticketing</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <script>
+        (() => {
+            let theme = '';
+            try {
+                theme = localStorage.getItem('gatepass-theme') || '';
+            } catch (error) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/style.css?v=6">
 </head>
 <body>
 
 <header>
     <h1>Gatepass</h1>
     <p><?= e($summary) ?></p>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <svg class="sun-icon" width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+        <svg class="moon-icon" width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"></path></svg>
+    </button>
 </header>
 
 <main>
@@ -190,5 +206,25 @@
     </section>
 
 </main>
+<script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    const setTheme = (theme) => {
+        document.documentElement.dataset.theme = theme;
+        const nextTheme = theme === 'dark' ? 'light' : 'dark';
+        themeToggle.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
+        themeToggle.setAttribute('title', `Switch to ${nextTheme} mode`);
+        try {
+            localStorage.setItem('gatepass-theme', theme);
+        } catch (error) {}
+    };
+
+    const initialTheme = document.documentElement.dataset.theme;
+    const initialNextTheme = initialTheme === 'dark' ? 'light' : 'dark';
+    themeToggle.setAttribute('aria-label', `Switch to ${initialNextTheme} mode`);
+    themeToggle.setAttribute('title', `Switch to ${initialNextTheme} mode`);
+    themeToggle.addEventListener('click', () => {
+        setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
+</script>
 </body>
 </html>
