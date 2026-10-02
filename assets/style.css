@@ -170,17 +170,19 @@ button:hover { background: linear-gradient(90deg, #ec4899, #be185d); }
     font-size: 15px;
     font-weight: 600;
     text-decoration: none;
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
-.sort-pill.is-active {
-    background: #fff;
-    color: #1f2937;
-    border-color: rgba(0, 0, 0, 0.15);
+.sort-pill.bg-pink-600 {
+    background: #db2777;
+    border-color: #db2777;
+    color: #fff;
 }
-.sort-pill:not(.is-active) {
-    background: transparent;
-    border-color: rgba(0, 0, 0, 0.15);
-    color: #374151;
-}
+.sort-pill.text-white { color: #fff; }
+.sort-pill.text-gray-600 { color: #4b5563; }
+.sort-pill.border-gray-200 { border-color: #e5e7eb; }
+.sort-pill.border-pink-600 { border-color: #db2777; }
+.sort-pill.bg-white { background: #fff; }
+.sort-pill.hover\:bg-pink-50:hover { background: #fff1f5; }
 .sort-pill:focus-visible { outline: 3px solid var(--line); outline-offset: 2px; }
 .person {
     display: flex;

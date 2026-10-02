@@ -143,8 +143,8 @@
             </h2>
 
             <nav class="sort-controls" aria-label="Sort attendees">
-                <a class="sort-pill <?= $sort === 'desc' ? 'is-active' : '' ?>" href="?sort=desc" <?= $sort === 'desc' ? 'aria-current="true"' : '' ?>>Highest total</a>
-                <a class="sort-pill <?= $sort === 'asc' ? 'is-active' : '' ?>" href="?sort=asc" <?= $sort === 'asc' ? 'aria-current="true"' : '' ?>>Lowest total</a>
+                <a class="sort-pill <?= $sort === 'desc' ? 'bg-pink-600 text-white border-pink-600' : 'bg-white text-gray-600 border-gray-200 hover:bg-pink-50' ?>" href="?sort=desc" <?= $sort === 'desc' ? 'aria-current="true"' : '' ?>>Highest total</a>
+                <a class="sort-pill <?= $sort === 'asc' ? 'bg-pink-600 text-white border-pink-600' : 'bg-white text-gray-600 border-gray-200 hover:bg-pink-50' ?>" href="?sort=asc" <?= $sort === 'asc' ? 'aria-current="true"' : '' ?>>Lowest total</a>
             </nav>
         </div>
 
