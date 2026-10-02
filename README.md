@@ -1,3 +1,4 @@
+| count, asort | index.php |
 # Gatepass - Event Ticketing (beginner version)
 
 Copy all files into MAMP/htdocs/<your folder>/ then open http://localhost:8888/<your folder>/
@@ -14,7 +15,7 @@ Needs PHP 8+ (the `match` expression). The uploads/ folder must be writable.
 | Multidimensional arrays | includes/data.php ($events, $tiers) |
 | 2+ typed functions | includes/functions.php (all of them) |
 | Pass by reference / static | add_registration(array &$list), next_ticket_id() |
-| count, in_array, asort, implode, explode | index.php and page.php |
+| count, asort | index.php |
 | foreach + endforeach / endif | templates/page.php |
 | if-elseif-else / match | get_level(), group_type() |
 | Math | calculate_order() |

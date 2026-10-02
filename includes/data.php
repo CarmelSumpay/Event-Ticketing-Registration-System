@@ -1,7 +1,7 @@
 <?php
 // ---------- SETTINGS (easy to change) ----------
 const MIN_NAME_LENGTH = 4;                // change 4 to 8 for the live challenge
-const MAX_FILE_SIZE   = 2 * 1024 * 1024;  // 2 MB
+const MAX_FILE_SIZE   = 10 * 1024 * 1024;  // 10 MB
 const VAT_RATE        = 0.12;             // 12% tax
 const SERVICE_FEE     = 0.05;             // 5% service fee
 
@@ -22,8 +22,6 @@ $promo_codes = [
     'STUDENT'   => 0.15,
     'EARLYBIRD' => 0.10,
 ];
-
-$interest_options = ['Music', 'Technology', 'Art', 'Food'];
 
 // allowed image types and the file extension we save them with
 $allowed_types = [

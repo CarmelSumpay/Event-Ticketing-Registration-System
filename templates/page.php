@@ -136,17 +136,6 @@
                 <input type="text" name="promo" value="<?= e($promo) ?>" placeholder="STUDENT">
             </label>
 
-            <!-- Interests checkboxes -->
-            <p class="label">Interests</p>
-            <div class="chips">
-                <?php foreach ($interest_options as $option): ?>
-                <label>
-                    <input type="checkbox" name="interests[]" value="<?= e($option) ?>" <?= in_array($option, $interests) ? 'checked' : '' ?>>
-                    <?= e($option) ?>
-                </label>
-                <?php endforeach; ?>
-            </div>
-
             <label>Badge photo (JPG, PNG or WebP, max 2 MB)
                 <input type="file" name="photo">
             </label>
@@ -187,13 +176,6 @@
                         <?= e($tiers[$person['tier']]['label']) ?> x <?= $person['qty'] ?> |
                         <?= e($person['id']) ?>
                     </small><br>
-
-                    <!-- interests were saved with implode(), so we split them with explode() -->
-                    <?php if ($person['interests'] !== ''): ?>
-                        <?php foreach (explode(', ', $person['interests']) as $tag): ?>
-                        <span class="tag"><?= e($tag) ?></span>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
                 </div>
 
                 <div class="money">

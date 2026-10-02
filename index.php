@@ -33,12 +33,7 @@ $event     = $_POST['event'] ?? '';
 $tier      = $_POST['tier'] ?? '';
 $qty       = $_POST['qty'] ?? '1';
 $promo     = $_POST['promo'] ?? '';
-$interests = $_POST['interests'] ?? [];
 $agree     = $_POST['agree'] ?? '';
-
-if (!is_array($interests)) {
-    $interests = [];
-}
 
 $errors = [];
 
@@ -90,14 +85,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'That promo code does not exist.';
     }
 
-    // Interests must be from our list
-    foreach ($interests as $item) {
-        if (!in_array($item, $interest_options)) {
-            $errors[] = 'Invalid interest selected.';
-            break;
-        }
-    }
-
     // Terms
     if ($agree !== 'yes') {
         $errors[] = 'Please accept the terms.';
@@ -145,7 +132,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'event'     => $event,
             'tier'      => $tier,
             'qty'       => (int) $qty,
-            'interests' => implode(', ', $interests),
             'photo'     => $new_file_name,
             'subtotal'  => $order['subtotal'],
             'discount_rate' => $order['discount_rate'],
